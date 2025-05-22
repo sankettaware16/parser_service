@@ -5,8 +5,14 @@ from datetime import datetime
 import argparse
 from regex_loader import extract_fields
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, '..'))
+config_path = os.path.join(PROJECT_ROOT, 'config', 'services.yaml')
+
 # Load service-to-keywords mapping
-with open('/etc/parser_service/config/services.yaml', 'r') as f:
+with open(config_path, 'r') as f:
+    service_map = yaml.safe_load(f)
+
     service_map = yaml.safe_load(f)
 
 def detect_service(log_line):
