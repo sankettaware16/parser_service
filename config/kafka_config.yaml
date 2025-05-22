@@ -1,0 +1,5 @@
+broker: "<KAFKA-IP-ADD>"
+
+topics:
+  - postfix
+  - mail_login
