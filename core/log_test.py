@@ -13,8 +13,6 @@ config_path = os.path.join(PROJECT_ROOT, 'config', 'services.yaml')
 with open(config_path, 'r') as f:
     service_map = yaml.safe_load(f)
 
-    service_map = yaml.safe_load(f)
-
 def detect_service(log_line):
     for service, keywords in service_map.items():
         if any(keyword in log_line for keyword in keywords):
