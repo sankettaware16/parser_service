@@ -1,0 +1,4 @@
+parsers:
+  roundcube: parsers.roundcube_parser.RoundcubeParser
+  postfix: parsers.postfix_parser.PostfixParser
+  firewall: parsers.firewall_parser.FirewallParser
