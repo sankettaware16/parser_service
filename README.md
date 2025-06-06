@@ -54,11 +54,16 @@ postfix: postfix_parser.PostfixParser
 
 ## How to Run
 make setup.sh executable using chmod +x setup.sh
+
 then run ./setup.sh
+
 this will install all the requirements
+
 run the main file 
 cd /etc/parser_service/
+
 python3 core/kafka_parser.py
+
 The service will:
 
 Listen to Kafka topic
