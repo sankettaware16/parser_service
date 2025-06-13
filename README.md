@@ -73,3 +73,12 @@ Parse incoming logs using regex
 Output structured JSON to output/
 
 Forward logs to Elasticsearch(still working on it)
+
+
+# RUN AS SERVICE
+if want this parser to run as a service 
+make sure your dir looks like /etc/parser_service
+make install_as_service.sh executanle
+chmod +x install_as_service.sh
+and then verify by 
+systemctl status parser
