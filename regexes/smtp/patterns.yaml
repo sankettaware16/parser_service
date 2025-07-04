@@ -1,0 +1,32 @@
+
+timestamp:
+  - name: smtp_timestamp
+    pattern: '\[(\d{2}-[A-Za-z]{3}-\d{4} \d{2}:\d{2}:\d{2} \+[0-9\-]+)\]'
+
+from:
+  - name: smtp_from
+    pattern: 'From:\s([^\s#]+@[^\s#]+(?:\.[^\s#]+)+)'
+
+to:
+  - name: smtp_to
+    pattern: 'To:\s[^\s<]+ <([^\s#]+@[^\s#]+(?:\.[^\s#]+)+)>'
+
+subject:
+  - name: smtp_subject
+    pattern: 'Subject:\s([^\s#]+(?:[^\n#]*))#(\d+)'
+
+message_id:
+  - name: smtp_message_id
+    pattern: 'Message-ID:\s<([^\s#]+@[^\s#]+(?:\.[^\s#]+)+)>#(\d+)'
+
+content_type:
+  - name: smtp_content_type
+    pattern: 'Content-Type:\s([^\s#]+(?:[^\n#;]*))'
+
+message_content:
+  - name: smtp_message_content
+    pattern: 'Content-Transfer-Encoding:[^\r\n]*\s*\r?\n\s*\r?\n([\s\S]+?)(?=\r?\n\[|$)'
+
+file_name:
+  - name: smtp_file_name
+    pattern: '(?<=filename=")([^"]+)'
