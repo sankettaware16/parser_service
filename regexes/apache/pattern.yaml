@@ -1,0 +1,35 @@
+
+timestamp:
+  - name: apache_timstamp
+    pattern: '\[(\d{1,2}\/[A-Z][a-z]{2}\/\d{4}:\d{2}:\d{2}:\d{2}\s\+\d{4})]'
+  - name: apache_iso
+    pattern: '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+\d{2}:\d{2}'
+  - name: apache_syslog
+    pattern: '[A-Z][a-z]{2}\s{1,2}\d{1,2}\s\d{2}:\d{2}:\d{2}'
+  - name: apache_syslog2
+    pattern: '([A-Z][a-z]{2}\s\s\d\s\d\d:\d\d:\d\d)'
+
+apache_method:
+  - name: method
+    pattern: '(GET|POST)'
+
+apache_line:
+  - name: request_line
+    pattern: '((GET|POST)\s\/\S*\s\S*)'
+
+
+apache_code:
+  - name: status_code
+    pattern: '(\d{3})\s\d{3}'
+
+apache_response:
+  - name: response_size
+    pattern: '\d{3}\s(\d+)'
+
+user_string:
+  - name: user_agent_size
+    pattern: '(([^"])*)"$'
+
+apache_url:
+  - name: apache_referral_url
+    pattern: '(\S*)\s"([^"])*"$'
