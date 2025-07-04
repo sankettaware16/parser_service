@@ -1,0 +1,38 @@
+#header: 
+#  - name: header_fields 
+#    pattern: '(?P<timestamp>[A-Z][a-z]{2}\s\s?\d{1,2}\s\d{2}:\d{2}:\d{2})\s(?P<collector_host>\S+)\s(?P<collector_service>\S+)\s(?P<host_timestamp>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+\d{2}:\d{2})\s(?P<source_host>\S+)\s(?P<source_service>\S+)'
+
+timestamp:
+  - name: ngnix_timstamp
+    pattern: '\[(\d{1,2}\/[A-Z][a-z]{2}\/\d{4}:\d{2}:\d{2}:\d{2}\s\+\d{4})]'
+  - name: ngnix_iso
+    pattern: '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+\d{2}:\d{2}'
+  - name: ngnix_syslog
+    pattern: '[A-Z][a-z]{2}\s{1,2}\d{1,2}\s\d{2}:\d{2}:\d{2}'
+  - name: ngnix_syslog2
+    pattern: '([A-Z][a-z]{2}\s\s\d\s\d\d:\d\d:\d\d)'
+
+nginx_method:
+  - name: method
+    pattern: '(GET|POST)'
+
+nginx_line:
+  - name: request_line
+    pattern: '((GET|POST)\s\/\S*\s\S*)'
+
+
+nginx_code:
+  - name: status_code
+    pattern: '(\d{3})\s\d{3}'
+
+nginx_response:
+  - name: response_size
+    pattern: '\d{3}\s(\d+)'
+
+user_string:
+  - name: user_agent_size
+    pattern: '(([^"])*)"$'
+
+nginx_url:
+  - name: nginx_referral_url
+    pattern: '(\S*)\s"([^"])*"$'
