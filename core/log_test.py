@@ -65,7 +65,7 @@ def save_output(logs, suffix):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Local log file parser for testing")
-    parser.add_argument("file", help="Path to the local .log file")
+    parser.add_argument("-f", "--file", required=True, help="Path to the local .log file")
     args = parser.parse_args()
 
     parsed_logs, failed_logs, total, success, failed = parse_log_file(args.file)
@@ -78,3 +78,4 @@ if __name__ == "__main__":
     print(f"  Parsed logs   : {success}")
     print(f"  Failed logs   : {failed}")
     print("\nOutput saved to /etc/parser_service/output/")
+
