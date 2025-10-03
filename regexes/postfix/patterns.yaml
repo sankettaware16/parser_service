@@ -64,7 +64,7 @@ to:
     pattern: 'to=<([^>]+)>'
 
 to_username:
-  - name: postfix_to_domain
+  - name: postfix_to_username
     pattern: 'to=<(\S+)\@\S+>'
 
 to_domain:
