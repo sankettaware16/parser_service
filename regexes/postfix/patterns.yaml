@@ -50,9 +50,27 @@ from:
   - name: postfix_from
     pattern: 'from=<([^>]+)>'
 
+from_username:
+  - name: postfix_from_username
+    pattern: 'from=<(\S+)\@\S+>'
+
+from_domain:
+  - name: postfix_from_domain
+    pattern: 'from=<\S+\@(\S+)>'
+
+
 to:
   - name: postfix_to
     pattern: 'to=<([^>]+)>'
+
+to_username:
+  - name: postfix_to_domain
+    pattern: 'to=<(\S+)\@\S+>'
+
+to_domain:
+  - name: postfix_to_domain
+    pattern: 'to=<\S+\@(\S+)>'
+
 
 status:
   - name: postfix_status
